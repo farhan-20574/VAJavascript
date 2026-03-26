@@ -1,0 +1,19 @@
+{
+  "name": "mvc-learning-app",
+  "version": "1.0.0",
+  "description": "MVC (Model-View-Controller) structure for JavaScript learning",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "node --watch main.js"
+  },
+  "keywords": [
+    "mvc",
+    "javascript",
+    "learning",
+    "design-pattern"
+  ],
+  "author": "",
+  "license": "ISC"
+}
