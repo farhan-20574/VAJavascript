@@ -1,8 +1,21 @@
-let text ="";
+
+let userInput = prompt("enter any number")
+
+
+
+
+
+
+
 
 for (let index = 1; index <=10 ; index++) {
-    
-    // text += `This text iteration no. ${index} <br> `;
-    text += "2 x " +"="+ index * 2+  "<br>";
+  
+    document.write(`${userInput} x ${index} = ${userInput*index } <br>`);
 }
-document.getElementById("iText").innerHTML = text;
+
+
+
+
+
+
+// document.getElementById("iText").innerHTML = text;
