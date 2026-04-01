@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SSB</title>
     <style>
-        body{
-            background-color: yellow;
-        }
-        h3{
-            color: rgb(255, 0, 0);
-        }
+      body {
+        background-color: yellow;
+      }
+      h3 {
+        color: rgb(255, 0, 0);
+      }
     </style>
   </head>
 
@@ -64,32 +64,26 @@
         totalMarks = 300;
         let marksObtained = math + urdu + science;
 
-        let percentage = marksObtained/totalMarks*100
+        let percentage = (marksObtained / totalMarks) * 100;
 
-        let grade =""
+        let grade = "";
 
-        if (percentage >=80) {
-          grade = "A"
-        }
-        else if (percentage >=70) {
-            grade = "B"
-        }
-        else if (percentage >=60) {
-            grade = "C"
-        }
-        else if (percentage >=50) {
-            grade = "D"
-        }
-        else {
-          grade = "F"
+        if (percentage >= 80) {
+          grade = "A";
+        } else if (percentage >= 70) {
+          grade = "B";
+        } else if (percentage >= 60) {
+          grade = "C";
+        } else if (percentage >= 50) {
+          grade = "D";
+        } else {
+          grade = "F";
         }
 
-        document.getElementById("mNum").innerHTML = marksObtained
-        document.getElementById("pNum").innerHTML = percentage
-        document.getElementById("gText").innerHTML = grade
-        
+        document.getElementById("mNum").innerHTML = marksObtained;
+        document.getElementById("pNum").innerHTML = percentage;
+        document.getElementById("gText").innerHTML = grade;
       }
-
     </script>
   </body>
 </html>
