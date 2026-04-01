@@ -31,12 +31,12 @@
       </tr>
       <tr>
         <td>Urdu</td>
-        <td id="mou"><input name="urduMO" type="number" /></td>
+        <td id="mou"><input id="urduMO" type="number" /></td>
         <td>100</td>
       </tr>
       <tr>
         <td>Science</td>
-        <td id="mos"><input name="scienceMO" type="number" /></td>
+        <td id="mos"><input id="scienceMO" type="number" /></td>
         <td>100</td>
       </tr>
     </table>
@@ -57,9 +57,9 @@
     <!-- <script src="markscalculate.js"></script> -->
     <script>
       function calculate() {
-        let math = Number(document.getElementById("mathMO"));
-        let urdu = Number(document.getElementById("urdrMO"));
-        let science = Number(document.getElementById("scienceMO"));
+        let math = Number(document.getElementById("mathMO").value);
+        let urdu = Number(document.getElementById("urduMO").value);
+        let science = Number(document.getElementById("scienceMO").value);
 
         totalMarks = 300;
         let marksObtained = math + urdu + science;
