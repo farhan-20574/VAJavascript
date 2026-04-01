@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSB</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+        h3{
+            color: rgb(255, 0, 0);
+        }
+    </style>
+  </head>
+
+  <body>
+    <h2>Sindh Board of Intermediate</h2>
+    <table>
+      <h3>Mark Sheet</h3>
+      <tr>
+        <th>Subject</th>
+        <th>marks obtianed</th>
+        <th>total marks</th>
+      </tr>
+      <tr>
+        <td>Math</td>
+        <td id="mom"><input id="mathMO" type="number" /></td>
+
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Urdu</td>
+        <td id="mou"><input name="urduMO" type="number" /></td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Science</td>
+        <td id="mos"><input name="scienceMO" type="number" /></td>
+        <td>100</td>
+      </tr>
+    </table>
+    <button onclick="calculate()">Calculate</button>
+
+    <h3 id="mo">
+      Marks obtained :
+      <p id="mNum"></p>
+    </h3>
+    <h3 id="%">
+      Percentage :
+      <p id="pNum"></p>
+    </h3>
+    <h3 id="g">
+      Your Grade is:
+      <p id="gText"></p>
+    </h3>
+    <!-- <script src="markscalculate.js"></script> -->
+    <script>
+      function calculate() {
+        let math = Number(document.getElementById("mathMO"));
+        let urdu = Number(document.getElementById("urdrMO"));
+        let science = Number(document.getElementById("scienceMO"));
+
+        totalMarks = 300;
+        let marksObtained = math + urdu + science;
+
+        let percentage = marksObtained/totalMarks*100
+
+        let grade =""
+
+        if (percentage >=80) {
+          grade = "A"
+        }
+        else if (percentage >=70) {
+            grade = "B"
+        }
+        else if (percentage >=60) {
+            grade = "C"
+        }
+        else if (percentage >=50) {
+            grade = "D"
+        }
+        else {
+          grade = "F"
+        }
+        
+      }
+
+    </script>
+  </body>
+</html>
