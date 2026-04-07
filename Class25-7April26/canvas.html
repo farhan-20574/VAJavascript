@@ -37,7 +37,7 @@
       ctx.stroke();
 
       // step 5 move the object
-      let x = 0;
+      let x = 100;
 
       //   function draw() {
       //     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -61,11 +61,17 @@
         if (e.key === "ArrowLeft") {
           y -= 10;
         }
+        if (e.key === "ArrowDown") {
+          x += 10;
+        }
+         if (e.key === "ArrowUp") {
+          x -= 10;
+        }
       });
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillstyle = "orange";
-        ctx.fillRect(y, 100, 50, 50);
+        ctx.fillRect(y,x, 50, 50, 50);
         requestAnimationFrame(draw);
       }
       draw();
