@@ -11,7 +11,7 @@ console.log(row)
 
 // 8=* 123
 
-for (let i= %1;i <= 4 ; i++) {
+for (let i= 1;i <= 4 ; i++) {
 let row= ""
 let num= "";
 
@@ -25,25 +25,25 @@ console.log(row)
 }
 
 
-// // top part
-// for (let i = 1; i <= 2; i++) {
-//   let row = "";
+// top part
+for (let i = 1; i <= 2; i++) {
+  let row = " ";
 
-//   // spaces
-//   for (let s = 1; s <= 2 - i; s++) {
-//     row += " ";
-//   }
+  // spaces
+  for (let s = 1; s <= 2 - i; s++) {
+    row += " ";
+  }
 
-//   // stars
-//   for (let j = 1; j <= i; j++) {
-//     row += "* ";
-//   }
+  // stars
+  for (let j = 1; j <= i; j++) {
+    row += "*";
+  }
 
-//   console.log(row.trim());
-// }
+  console.log(row.trim());
+}
 
-// bottom part
-// for (let i = 1; i >= 1; i--) {
-//   let row = " *";
-//   console.log(row);
-// }
+//bottom part
+for (let i = 1; i >= 1; i--) {
+  let row = "*";
+  console.log(row);
+}
