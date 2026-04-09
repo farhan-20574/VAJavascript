@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz JS Loops</title>
+  </head>
+  <body>
+    <p><b>Dated : 09-04-2026 | Quiz</b></p>
+    <br />
+    <hr />
+
+    <h2>Question #1 Pyramid triangle</h2>
+    <pre id="q1"></pre>
+    <p id="result"> </p>
+
+    <script>
+      let output = "";
+      let num = 3;
+      for (let line = 1; line <= num; line++) {
+        let row = "";
+        for (let space = 1; space <= num-1; space++) {
+          row = row +"9";
+        }
+        for (let stars = 1; stars <= 2 * line - 1; stars++) {
+          row = row + "*";
+        }
+        output += row + "\n";
+        document.getElementById("q1").innerHTML =  output;
+        console.log("code")
+      }
+    </script>
+  </body>
+</html>
