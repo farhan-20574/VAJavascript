@@ -11,24 +11,115 @@
     <hr />
 
     <h2>Question #1 Pyramid triangle</h2>
-    <pre id="q1"></pre>
-    <p id="result"> </p>
+    <pre id="result"></pre>
+    <p id="result"></p>
+    <br />
+    <br />
+    <hr />
+
+    <h2>Question #2 right angle triangle</h2>
+    <pre id="result2"></pre>
+    <br /><br />
+
+    <h2>Question #3 Calculator Basic</h2>
+
+    <hr />
+    <div class="calc">
+      <label for="value1">Enter your 1st value to add:</label>
+      <input id="value1" type="text" /> <br /><br />
+      <label for="value2">Enter your 2nd value to add:</label>
+      <input id="value2" type="text" /> <br /><br />
+
+      <pre id="resultCalc"></pre>
+
+      <button id="submit" type="submit">calculate</button>
+
+      <pre id="result3"></pre>
+    </div><br><br>
+    <hr/>
+
+
+
+
+<h2>Question #4 Number Pyramid</h2>
+    <pre id="result4"></pre>
+    <p id="result4"></p>
+    <br />
+    <br />
+    <hr />
+
+
+
+
 
     <script>
-      let output = "";
-      let num = 3;
+      let outputQ1 = "";
+      let num = 6;
       for (let line = 1; line <= num; line++) {
         let row = "";
-        for (let space = 1; space <= num-1; space++) {
-          row = row +"9";
+
+        //space
+        for (let space = 1; space <= num - line; space++) {
+          row += " ";
         }
-        for (let stars = 1; stars <= 2 * line - 1; stars++) {
-          row = row + "*";
+
+        //stars
+        for (let star = 1; star <= 2 * line - 1; star++) {
+          row += "*";
         }
-        output += row + "\n";
-        document.getElementById("q1").innerHTML =  output;
-        console.log("code")
+        outputQ1 += row + "\n";
       }
+
+      
+
+      document.getElementById("result").innerText = outputQ1;
+
+      let outputQ2 = "";
+      let tri = 6;
+      for (let line = 1; line <= tri; line++) {
+        let row = "";
+
+      
+        for (let star = 1; star <= 2 * line - 1; star++) {
+          row += "*";
+        }
+        outputQ2 += row + "\n";
+      }
+
+      document.getElementById("result2").innerText = outputQ2;
+
+     
+let outputQ3 = "";
+
+document.getElementById("submit").onclick = function () {
+    
+    let value1 = Number(document.getElementById("value1").value);
+    let value2 = Number(document.getElementById("value2").value);
+
+    
+    let result3 = `<b>Your toal value is ${value1 + value2};<b>`
+
+   
+    document.getElementById("result3").innerHTML = result3;
+};
+
+//bounus question
+// Question 4: Continuous Number Pyramid
+let outputQ4 = "";
+let currentNum = 1; 
+
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += currentNum + " "; // Added a space for readability
+        currentNum++;
+    }
+    outputQ4 += row + "\n";
+}
+
+document.getElementById("result4").innerText = outputQ4;
+
+
     </script>
   </body>
 </html>
