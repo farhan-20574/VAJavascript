@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple To-Do (Template Literals)</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <h2>My To-Do List</h2>
+
+    <input id="taskInput" type="text" placeholder="Enter a task" />
+    <button type="button" id="addBtn">Add</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+      $(document).ready(function () {
+        //add task
+        $("#addBtn").click(function () {
+          let task = $("#taskInput").val();
+          //write task
+
+          if (task !== "") {
+            let listItem = `<li>${task} <button class='del'>hatado</button> </li>`;
+
+            $("#taskList").append(listItem);
+
+            $("#taskInput").val("");
+            //animation
+            $("li").last().hide().fadeIn();
+          }
+        });
+      });
+      //delete
+      ($(document).on("click", ".del"),function () {
+          $(this).parent(),function(){
+            $(this).remove();
+
+          }
+        });
+    </script>
+  </body>
+</html>
