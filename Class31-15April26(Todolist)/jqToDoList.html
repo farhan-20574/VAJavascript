@@ -7,11 +7,14 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+    .ST
+</style>
   </head>
   <body>
     <h2>My To-Do List</h2>
 
-    <input id="taskInput" type="text" placeholder="Enter a task" />
+    <input id="taskInput" type="text" placeholder="Enter a task" >
     <button type="button" id="addBtn">Add</button>
 
     <ul id="taskList"></ul>
@@ -35,12 +38,15 @@
         });
       });
       //delete
-      ($(document).on("click", ".del"),function () {
-          $(this).parent(),function(){
-            $(this).remove();
+      $(document).on("click", ".del", function () {
+        $(this).parent().remove();
+      });
 
-          }
-        });
+    //mark complete
+      $(document).on("click","li",function () {
+        $(this).toggleClass("ST")
+        
+      })
     </script>
   </body>
 </html>
