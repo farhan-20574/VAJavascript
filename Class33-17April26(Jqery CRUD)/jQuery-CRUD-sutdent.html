@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal | Management</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- UI -->
+    <h1>Welcome to Student Management Portal</h1><br>
+    <hr><br>
+    <label for="addStudent">Student Credentials </label>
+    <input type="text" id="addStudentName" placeholder="Enter Student Name">
+    <input type="text" id="addStudentCourse" placeholder="Enter Student Course">
+    <button type="button" id="addBtn">Add Student</button><br><br>
+    <hr>
+    <input type="text" id="search" placeholder="Search Student">
+    <h3>Result</h3>
+    <table border="1px" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableData"></tbody>
+
+        <!--jQery code-->
+       <script>
+    $(document).ready(function () {
+
+        let students = JSON.parse(localStorage.getItem("students")) || [];
+
+        function displaydata() {
+            $("#tableData").html("");
+
+            students.forEach((s, index) => {
+                $("#tableData").append(`
+                    <tr>
+                        <td>${s.name}</td>
+                        <td>${s.course}</td>
+                        <td>
+                            <button class="delete" data-id="${index}">Delete</button>
+                        </td>
+                    </tr>
+                `);
+            });
+        }
+
+        displaydata();
+
+        $("#addBtn").click(function () {
+            let name = $("#addStudentName").val();
+            let course = $("#addStudentCourse").val();
+
+            students.push({ name, course });
+            localStorage.setItem("students", JSON.stringify(students));
+
+            displaydata();
+
+            $("#addStudentName").val("");
+            $("#addStudentCourse").val("");
+        });
+
+    });
+</script>
+    </table>
+</body>
+
+</html>
