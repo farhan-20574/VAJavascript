@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Notes Pages App</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+      body {
+        display: flex;
+        font-family: Arial;
+        margin: 0;
+      }
+
+      #sidebar {
+        width: 30%;
+        background: #f4f4f4;
+        padding: 10px;
+        height: 100vh;
+      }
+
+      #content {
+        width: 70%;
+        padding: 20px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 300px;
+      }
+
+      .active {
+        background: #ddd;
+      }
+
+      button {
+        margin-top: 5px;
+        padding: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="sidebar">
+      <h3>Pages</h3>
+
+      <input type="text" id="newPageName" placeholder="Page name" >
+      <button type="button" id="addPage">Add Page</button>
+
+      <div id="pageList"></div>
+    </div>
+
+    <div id="content">
+      <h2 id="pageTitle">No Page Selected</h2>
+
+      <textarea
+        id="pageContent"
+        placeholder="Write your note here..."
+      ></textarea>
+      <br>
+
+      <button type="button" id="updatePage">Save / Update Page</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        let pages = {};
+        let currentPage = "";
+
+        // Add page
+        $("#addPage").click(function () {
+          let name = $("#newPageName").val();
+
+          if (name !== "" && !pages[name]) {
+            pages[name] = "";
+
+            $("#pageList").append(`<button class="pageBtn">${name}</button>`);
+            $("#newPageName").val("");
+          }
+        });
+
+        // Switch page
+        $(document).on("click", ".pageBtn", function () {
+          let name = $(this).text();
+
+          currentPage = name;
+
+          $("#pageTitle").text(name);
+          $("#pageContent").val(pages[name]);
+
+          $(".pageBtn").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        // Update button
+        $("#updatePage").click(function () {
+          if (currentPage === "") {
+            alert("Please select a page first!");
+            return;
+          }
+
+          pages[currentPage] = $("#pageContent").val();
+          alert("Page updated successfully!");
+        });
+      });
+    </script>
+  </body>
+</html>
