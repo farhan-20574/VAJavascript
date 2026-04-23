@@ -21,7 +21,7 @@
     </form>
 
     <?php
-    function add($a, $b)
+    function add ($a, $b)
     {
         return $a  + $b;
     }
@@ -43,7 +43,13 @@
     }
     if ($_POST){
         if(isset($_POST['add'])){
-            
+            echo"Addition".add($_POST['num1'],$_POST['num2']);
+        }
+        if(isset($_POST['percent'])){
+            echo"Percentage".percentage($_POST['marks']);
+        }
+         if(isset($_POST['grade'])){
+            echo"Grade is :".grade($_POST['marks']);
         }
     }
     ?>
